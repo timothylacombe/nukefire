@@ -34,7 +34,7 @@ event_register enter_world nukefire {post_connect_load login}
 	
 	#if {@is_session{nuke:%1}} {
 		#if {"%1" != "${char_name}"} {
-		    warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
+		    #nop warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
     	    #format {_ts} {%t} {%D %H:%m:%S};
 		    #line log logs/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in chars/%1.char;
     	};
