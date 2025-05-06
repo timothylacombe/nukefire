@@ -1,8 +1,10 @@
-#class initializer open
-
-#nop --
 #nop This should run to start your sessions 'tt++ nuke.tin'
-#nop --
 
+#class running kill;
+#class running open;
 
-#class initializer close
+#read common/initializer.tin
+
+connect gypsy
+
+#class running close;

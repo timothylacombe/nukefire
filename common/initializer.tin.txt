@@ -1,29 +1,12 @@
+#nop Session initialization and character login
+
 #class initializer kill
 #class initializer open
-
-
-#nop --
-#nop Class Definitions
-#nop --
-
-#var nukefire-description {Login and session management for Nukefire}
-#var nukefire-help {Use connect to connect to Nukefire on the main port.}
-
-#nop --
-#nop Modloader Stuff
-#nop --
-
-#alias nukefire-register {
-	#if {@isloaded{events}} {
-		register_module nukefire
-	} {
-		fail_module nukefire
-	}
-}
 
 #nop --
 #nop Events
 #nop --
+
 #event {SESSION CONNECTED} {
 	event_raise session_connected %0;
 }
@@ -38,23 +21,22 @@ event_register enter_world nukefire {post_connect_load login}
 #nop Alias
 #nop --
 
-#tab connect
 #alias connect {
-	#showme attempt to create session for player %1.;
+	#showme Attempting to create session for character %1.;
 	#switch {"%2"} {
-		#case {"tp"} {#session nukefire:%1 {tdome.nukefire.org} {4001} {$players/%1_nukefire.player}};
+		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char}};
 		#default {
-		#session nukefire:%1 {tdome.nukefire.org} {4000} {$players/%1_nukefire.player};
+		#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};
 		}
 	};
+	
 	#var menu_option login;
 	
-	#if {@is_session{nukefire:%1}} {
+	#if {@is_session{nuke:%1}} {
 		#if {"%1" != "${char_name}"} {
-		    warn CONFIG '%1' does not match '${char_name}' in $players/%1_nukefire.player;
+		    warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
     	    #format {_ts} {%t} {%D %H:%m:%S};
-		    #line log $log/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in $players/%1_nukefire.player;
-
+		    #line log logs/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in chars/%1.char;
     	};
 	} {
 		err connect Connection failed.
