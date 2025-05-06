@@ -21,13 +21,7 @@
 		}
 	};
 	
-	#if {@is_session{nuke:%1}} {
-		#if {"%1" != "${char_name}"} {
-		    #echo warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
-    	    #format {_ts} {%t} {%D %H:%m:%S};
-		    #line log logs/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in chars/%1.char;
-    	};
-	} {
+	#if {!@is_session{nuke:${char_name}}} {
 		#showme {Connection failed.};
 	}
 }
@@ -52,16 +46,11 @@
 #action {^*** PRESS RETURN:} {#cr}
 
 #action {^%sMake your choice:} {
+	#nop login logic needed;
 	1
 }
 
-#nop alias do_login {
-	#nop %0;
-	#if {"$menu_option" == "login"} {
-		#send 1;
-		#var menu_option logout
-	}
-}
+
 
 #nop action {^Reconnecting.} {
 	#var menu_option logout;
