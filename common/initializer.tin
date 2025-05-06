@@ -114,10 +114,7 @@ event_register enter_world nukefire {post_connect_load login}
 #action {^*** PRESS RETURN:} {#cr}
 
 #action {^%sMake your choice:} {
-	#switch {$menu_option} {
-		#case login {1};
-		#case logout {0};
-	}
+	1
 }
 
 #alias do_login {
