@@ -8,7 +8,6 @@
 #split 0 1;
 
 connect gypsy
-#gts
 connect headhunter
 
 #class running close;
