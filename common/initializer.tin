@@ -28,7 +28,7 @@
 		    #line log logs/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in chars/%1.char;
     	};
 	} {
-		#nop err connect Connection failed.
+		#echo err connect Connection failed.
 	}
 }
 
