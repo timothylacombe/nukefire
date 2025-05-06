@@ -70,33 +70,33 @@ event_register enter_world nukefire {post_connect_load login}
 
 #action {^            What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {$players/${char_name}_nukefire.player}
+	#class player read {chars/${char_name}.char}
 }
 
 #action {^      |  What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {$players/${char_name}_nukefire.player}
+	#class player read {chars/${char_name}.char}
 }
 
 #action {^           What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {$players/${char_name}_nukefire.player}
+	#class player read {chars/${char_name}.char}
 }
 
 #action {^                         What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {$players/${char_name}_nukefire.player}
+	#class player read {chars/${char_name}.char}
 }
 
 #action {^                         What's your name, freejack?$} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {$players/${char_name}_nukefire.player}	
+	#class player read {chars/${char_name}.char}	
 }
 
 #action {^Name:} {
 	#if {"$menu_option" == "login"} {
 		#send ${char_name};
-		#class player read {$players/${char_name}_nukefire.player}
+		#class player read {chars/${char_name}.char}
 	}
 } {9}
 
