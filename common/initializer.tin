@@ -107,17 +107,17 @@ event_register enter_world nukefire {post_connect_load login}
 	} {
 		#echo {<cfa>Password not loaded.}
 	};
-	#if {"${account_dont_forget_password}" != "true"} {
-		#showme <fcc>Forgetting password.;
-		#line oneshot #tick passw {#unvar char_password} {1}
-	}
+	#showme <fcc>Forgetting password.;
+	#line oneshot #tick passw {#unvar char_password} {1}
 }
 
 #action {^*** PRESS RETURN:} {#cr}
 
 #action {^%sMake your choice:} {
-	event_raise menu_prompt $menu_option;
-
+	#switch {$menu_option} {
+		#case login {1};
+		#case logout {0};
+	}
 }
 
 #alias do_login {
