@@ -71,7 +71,7 @@ event_register enter_world nukefire {post_connect_load login}
 #action {^                         What's your name, freejack?} {
 	#line oneshot #tick {name} {$char_name} {0.5};
 	#class player read {chars/${char_name}.char}
-} {8}
+} {9}
 
 #action {^Name:} {
 	#line oneshot #tick {name} {$char_name} {0.5};
@@ -85,8 +85,7 @@ event_register enter_world nukefire {post_connect_load login}
 	} {
 		#echo {<cfa>Password not loaded.}
 	};
-	#showme <fcc>Forgetting password.;
-	#line oneshot #tick passw {#unvar char_password} {1}
+	#line oneshot #tick passw {#unvar char_password;#showme <fcc>Forgetting password.;} {1}
 }
 
 #action {^*** PRESS RETURN:} {#cr}
