@@ -46,11 +46,11 @@
 #action {^Password:} {
 	#if { &{char_password} } {
 		#echo {<cfa>Password loaded.};
-		#line oneshot #tick {password} {${char_password}} {0.5};
+		#line oneshot #tick {charpass} {$char_password} {0.5};
 	} {
 		#echo {<cfa>Password not loaded.}
-	};
-	#line oneshot #tick passw {#unvar char_password;#showme <fcc>Forgetting password.;} {0.5}
+	}; 
+	#line oneshot #tick {passw} {#unvar char_password;#showme <fcc>Forgetting password.;} {0.5}
 }
 
 #action {^*** PRESS RETURN:} {#cr}
