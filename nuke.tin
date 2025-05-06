@@ -8,6 +8,8 @@
 #split 0 1;
 
 connect gypsy;
+connect heretic;
+connect voidstriker;
 connect headhunter;
 
 #class running close;
