@@ -5,6 +5,9 @@
 
 #read common/initializer.tin
 
+connect heretic
 connect gypsy
+connect voidstriker
+connect headhunter
 
 #class running close;
