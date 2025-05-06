@@ -36,21 +36,21 @@
 
 
 #action {^                         What's your name, freejack?} {
-	#line oneshot #tick {name} {gypsy} {0.5};
+	#line oneshot #tick {name} {#send ${char_name}} {0.5};
+	#class player read {chars/${char_name}.char}
 } {9}
 
 #action {^Name:} {
-	#line oneshot #tick {name} {$char_name} {0.5};
+	#line oneshot #tick {name} {#send ${char_name}} {0.5};
+	#class player read {chars/${char_name}.char}
 } {9}
 
 #action {^Password:} {
 	#if { &{char_password} } {
-		#echo {<cfa>Password loaded.};
-		#line oneshot #tick {charpass} {$char_password} {0.5};
+		#echo {<cfa>Password loaded.;$char_password};#unvar char_password;#showme <fcc>Forgetting password.
 	} {
 		#echo {<cfa>Password not loaded.}
-	}; 
-	#line oneshot #tick {passw} {#unvar char_password;#showme <fcc>Forgetting password.;} {0.5}
+	};
 }
 
 #action {^*** PRESS RETURN:} {#cr}
