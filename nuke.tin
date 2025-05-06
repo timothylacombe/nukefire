@@ -6,5 +6,7 @@
 #read common/initializer.tin
 
 connect gypsy
+#gts
+connect headhunter
 
 #class running close;
