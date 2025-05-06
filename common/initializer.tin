@@ -43,7 +43,7 @@ event_register enter_world nukefire {post_connect_load login}
 	}
 }
 
-#alias post_connect_load {
+#nop alias post_connect_load {
     #showme %0;
 	info Loading post-connect modules;
 	load_module prefs;
@@ -62,30 +62,30 @@ event_register enter_world nukefire {post_connect_load login}
 	#if {@is_alias{player_setup}} {player_setup %1};
 }
 
-#alias load_class {
+#nop alias load_class {
 	#nop %0;
 	#format _cls {%l} $MSDP_CLASS;
 	load_module nukefire/class/$_cls
 }
 
 #action {^                         What's your name, freejack?} {
-	#line oneshot #tick {name} {$char_name} {0.5};
 	#class player read {chars/${char_name}.char}
+	#line oneshot #tick {name} {$char_name} {0.5};
 } {9}
 
 #action {^Name:} {
-	#line oneshot #tick {name} {$char_name} {0.5};
 	#class player read {chars/${char_name}.char}
+	#line oneshot #tick {name} {$char_name} {0.5};
 } {9}
 
 #action {^Password:} {
 	#if { &{char_password} } {
 		#echo {<cfa>Password loaded.};
-		#send ${char_password};
+		#line oneshot #tick {password} {${char_password}} {0.5};
 	} {
 		#echo {<cfa>Password not loaded.}
 	};
-	#line oneshot #tick passw {#unvar char_password;#showme <fcc>Forgetting password.;} {1}
+	#line oneshot #tick passw {#unvar char_password;#showme <fcc>Forgetting password.;} {0.5}
 }
 
 #action {^*** PRESS RETURN:} {#cr}
@@ -94,7 +94,7 @@ event_register enter_world nukefire {post_connect_load login}
 	1
 }
 
-#alias do_login {
+#nop alias do_login {
 	#nop %0;
 	#if {"$menu_option" == "login"} {
 		#send 1;
@@ -102,23 +102,23 @@ event_register enter_world nukefire {post_connect_load login}
 	}
 }
 
-#action {^Reconnecting.} {
+#nop action {^Reconnecting.} {
 	#var menu_option logout;
 	post_connect_load reconnect
 }
 
-#action {^You take over your own body, already in use!$} {
+#nop action {^You take over your own body, already in use!$} {
 	#var menu_option logout;
 	post_connect_load reconnect
 }
 
 #nop #action {^Kick Back.   Relax.   Dream.   Build.$} {post_connect_load login}
 
-#action {^Kick Back.   Relax.   Dream.   Build.$} {
+#nop action {^Kick Back.   Relax.   Dream.   Build.$} {
 	event_raise enter_world
 }
 
-#action {^An unseen voice mutters, 'mzzzhngbt mnmndmzhmv!'$} {
+#nop action {^An unseen voice mutters, 'mzzzhngbt mnmndmzhmv!'$} {
 	event_raise reboot
 }
 
