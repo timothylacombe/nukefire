@@ -7,7 +7,7 @@
 #nop Events
 #nop --
 
-#event {SESSION CONNECTED} {
+#nop event {SESSION CONNECTED} {
 	event_raise session_connected %0;
 }
 
@@ -69,7 +69,7 @@ event_register enter_world nukefire {post_connect_load login}
 }
 
 #action {^                         What's your name, freejack?} {
-	#line oneshot #tick {name} {$char_name} {0.5};
+	#line oneshot #tick {name} {gypsy} {0.5};
 } {9}
 
 #action {^Name:} {
