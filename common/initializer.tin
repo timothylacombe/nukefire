@@ -37,12 +37,10 @@
 
 #action {^                         What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}
 } {9}
 
 #action {^Name:} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}
 } {9}
 
 #action {^Password:} {
