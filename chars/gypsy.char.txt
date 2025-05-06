@@ -1,0 +1,5 @@
+#nop Character File
+
+#var char_name {gypsy};
+#var leader {0};
+#var class {vagrant};
