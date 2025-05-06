@@ -68,29 +68,9 @@ event_register enter_world nukefire {post_connect_load login}
 	load_module nukefire/class/$_cls
 }
 
-#action {^            What's your name, freejack?} {
-	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}
-}
-
-#action {^      |  What's your name, freejack?} {
-	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}
-}
-
-#action {^           What's your name, freejack?} {
-	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}
-}
-
 #action {^                         What's your name, freejack?} {
 	#line oneshot #tick {name} {#send ${char_name}} {0.5};
 	#class player read {chars/${char_name}.char}
-}
-
-#action {^                         What's your name, freejack?$} {
-	#line oneshot #tick {name} {#send ${char_name}} {0.5};
-	#class player read {chars/${char_name}.char}	
 }
 
 #action {^Name:} {
