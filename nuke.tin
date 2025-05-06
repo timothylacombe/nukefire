@@ -7,7 +7,7 @@
 
 #split 0 1;
 
-connect gypsy
-connect headhunter
+connect gypsy;
+connect headhunter;
 
 #class running close;
