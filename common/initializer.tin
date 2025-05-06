@@ -790,6 +790,6 @@ init toggle[send] preferences off
 #action {> %1 leaves %w.$} {event_raise {entity_departure} {%1} {%2}}
 
 #nop vim: syntax=tt
-}
+
 
 #class initializer close
