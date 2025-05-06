@@ -76,7 +76,6 @@ event_register enter_world nukefire {post_connect_load login}
 #action {^Name:} {
 	#line oneshot #tick {name} {$char_name} {0.5};
 	#class player read {chars/${char_name}.char}
-	}
 } {9}
 
 #action {^Password:} {
