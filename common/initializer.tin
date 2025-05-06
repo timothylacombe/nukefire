@@ -47,7 +47,7 @@
 
 #action {^Password:} {
 	#if { &{char_password} } {
-		#echo {<cfa>Password loaded.;$char_password};#unvar char_password;#showme <fcc>Forgetting password.
+		#echo {<cfa>Password loaded.};$char_password;#unvar char_password;#showme <fcc>Forgetting password.
 	} {
 		#echo {<cfa>Password not loaded.}
 	};
