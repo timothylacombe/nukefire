@@ -17,15 +17,13 @@
 	#switch {"%2"} {
 		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char}};
 		#default {
-		#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};
+		#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};#echo %1
 		}
 	};
 	
-	#var menu_option login;
-	
 	#if {@is_session{nuke:%1}} {
 		#if {"%1" != "${char_name}"} {
-		    #nop warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
+		    #echo warn CONFIG '%1' does not match '${char_name}' in chars/%1.char;
     	    #format {_ts} {%t} {%D %H:%m:%S};
 		    #line log logs/tth.error ${_ts} warn CONFIG '%1' does not match char_name field '${char_name}' in chars/%1.char;
     	};
