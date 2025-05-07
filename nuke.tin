@@ -12,15 +12,15 @@ connect ${charMain};
 
 
 #if {$numParty >= 2} {
-	connect ${charTwo};#read char_loader.tin;
+	connect ${charTwo};#read chars/char_loader.tin;
 	}{};
 	
 #if {$numParty >= 3} {
-	connect ${charThree};#read char_loader.tin;
+	connect ${charThree};#read chars/char_loader.tin;
 	}{};
 	
 #if {$numParty >= 4} {
-	connect ${charFour};#read char_loader.tin;
+	connect ${charFour};#read chars/char_loader.tin;
 	#nuke:${charMain}
 	}{#nuke:${charMain}};
 
