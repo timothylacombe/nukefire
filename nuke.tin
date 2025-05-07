@@ -26,4 +26,4 @@ connect ${charMain};
 	}{};
 
 #showme TEST
-#class startup close;
+#class startup close
