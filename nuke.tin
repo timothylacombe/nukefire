@@ -9,6 +9,8 @@
 #split 0 1;
 
 connect ${charMain};
+#read chars/char_loader.tin;
+#read chars/leader.tin;
 
 
 #if {$numParty >= 2} {
