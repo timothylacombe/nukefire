@@ -4,7 +4,7 @@
 #var {charMain} {headhunter}
 
 #nop number of party members, 1 for solo
-#var numParty 1
+#var numParty 4
 
 #nop names of other characters, in order for loading
 #var charTwo {gypsy}
