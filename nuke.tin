@@ -24,8 +24,7 @@ connect ${charMain};
 	
 #if {$numParty >= 4} {
 	connect ${charFour};#read chars/char_loader.tin;
-	#nuke:${charMain}
-	}{#nuke:${charMain}};
+	}{};
 
 
 #class startup close;
