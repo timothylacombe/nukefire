@@ -25,5 +25,5 @@ connect ${charMain};
 	connect ${charFour};#read chars/char_loader.tin;
 	}{};
 
-
+#showme TEST
 #class startup close;

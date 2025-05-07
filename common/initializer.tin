@@ -3,15 +3,6 @@
 #class initializer kill
 #class initializer open
 
-#nop --
-#nop Events
-#nop --
-
-
-#nop --
-#nop Alias
-#nop --
-
 #alias connect {
 	#showme Attempting to create session for character %1.;
 	#switch {"%2"} {
