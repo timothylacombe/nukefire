@@ -12,18 +12,16 @@ connect ${charMain};
 
 #gts
 #if {$numParty >= 2} {
-	connect ${charTwo};
+	connect ${charTwo};#gts
 	}{};
 	
-#gts
 #if {$numParty >= 3} {
-	connect #{charThree};
+	connect ${charThree};#gts
 	}{};
-#gts
+	
 #if {$numParty >= 4} {
-	connect ${charFour};
-	}{};
-#nuke:${charMain}
+	connect ${charFour};#nuke:${charMain}
+	}{#nuke:${charMain}};
 
 
 #class startup close;
