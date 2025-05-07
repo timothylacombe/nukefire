@@ -1,0 +1,8 @@
+#nop loads character specific scripts
+
+#class char_loader kill
+#class char_loader open
+
+#read common/class/${class}.tin
+
+#class char_loader close
