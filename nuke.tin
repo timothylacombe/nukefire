@@ -6,13 +6,11 @@
 #read common/initializer.tin;
 #read config.tin;
 
-#nop common/msdp.tin;
-
 #split 0 1;
 
 connect ${charMain};
-#nop chars/char_loader.tin;
-#nop chars/leader.tin;
+#read chars/char_loader.tin;
+#read chars/leader.tin;
 
 
 #if {$numParty >= 2} {
