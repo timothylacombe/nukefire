@@ -5,6 +5,7 @@
 
 #read common/initializer.tin;
 #read config.tin;
+#read common/msdp.tin;
 
 #split 0 1;
 
