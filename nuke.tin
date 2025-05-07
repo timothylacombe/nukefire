@@ -13,15 +13,15 @@ connect ${charMain};
 #read chars/leader.tin;
 
 
-#if {$numParty >= 2} {
+#if {${numParty} > 1} {
 	connect ${charTwo};#read chars/char_loader.tin;
 	}{};
 	
-#if {$numParty >= 3} {
+#if {${numParty} > 2} {
 	connect ${charThree};#read chars/char_loader.tin;
 	}{};
 	
-#if {$numParty >= 4} {
+#if {${numParty} > 3} {
 	connect ${charFour};#read chars/char_loader.tin;
 	}{};
 
