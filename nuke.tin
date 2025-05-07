@@ -1,15 +1,24 @@
 #nop This should run to start your sessions 'tt++ nuke.tin'
 
-#class running kill;
-#class running open;
+#class startup kill;
+#class startup open;
 
 #read common/initializer.tin
+#read config.tin
 
 #split 0 1;
 
-connect gypsy;
-connect heretic;
-connect voidstriker;
-connect headhunter;
+connect ${charMain};
 
-#class running close;
+#if {numParty >= 2} {
+	connect ${charTwo};
+	};
+#if {numParty >= 3} {
+	connect #{charThree};
+	};
+#if {numParty >= 4} {
+	connect ${charFour};
+	};
+
+
+#class startup close;
