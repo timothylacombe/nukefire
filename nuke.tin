@@ -3,8 +3,8 @@
 #class startup kill;
 #class startup open;
 
-#read common/initializer.tin
-#read config.tin
+#read common/initializer.tin;
+#read config.tin;
 
 #nop common/msdp.tin;
 
