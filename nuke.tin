@@ -10,13 +10,13 @@
 
 connect ${charMain};
 
-#gts
+
 #if {$numParty >= 2} {
-	connect ${charTwo};#gts
+	connect ${charTwo};
 	}{};
 	
 #if {$numParty >= 3} {
-	connect ${charThree};#gts
+	connect ${charThree};
 	}{};
 	
 #if {$numParty >= 4} {
