@@ -25,5 +25,6 @@ connect ${charMain};
 	connect ${charFour};#read chars/char_loader.tin;
 	}{};
 
+#nuke:${charMain};
 #showme TEST
 #class startup close
