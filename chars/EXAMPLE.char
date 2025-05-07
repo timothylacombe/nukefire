@@ -1,0 +1,7 @@
+#nop Character File
+#nop save as <charname>.char
+
+#var char_name {<charname>};
+#nop password will be removed from variables after login
+#var char_password {<charpassword>};
+#var class {<class>};
