@@ -7,10 +7,11 @@
 #read config.tin
 
 #nop common/msdp.tin;
+
 #split 0 1;
 
 connect ${charMain};
-#read chars/char_loader.tin;
+#nop chars/char_loader.tin;
 #nop chars/leader.tin;
 
 
