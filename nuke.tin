@@ -10,15 +10,20 @@
 
 connect ${charMain};
 
+#gts
 #if {numParty >= 2} {
 	connect ${charTwo};
-	};
+	}
+	
+#gts
 #if {numParty >= 3} {
 	connect #{charThree};
 	};
+#gts
 #if {numParty >= 4} {
 	connect ${charFour};
 	};
+#nuke:${charMain}
 
 
 #class startup close;
