@@ -1,0 +1,61 @@
+#class vagrant kill;
+#class vagrant open;
+
+#nop Level 1:      backstab
+#nop Level 1:      knifeplay
+#nop Level 1:      dual wield
+#nop Level 1:      sneak
+#nop Level 2:      pick lock
+#nop Level 4:      steal
+#nop Level 4:      dirty trick
+#nop Level 5:      hide
+#nop Level 6:      stun
+#nop Level 6:      track
+#nop Level 8:      feign death
+#nop Level 10:     knifeplay
+#nop Level 15:     circle
+#nop Level 22:     disembowel
+#nop Level 25:     grifter's gambit
+#nop Level 32:     firstaid
+#nop Level 32:     roguerush
+#nop Level 40:     dagger dance
+
+
+#var {pick} {pick lock};
+#var {healOther} {first};
+#var {healSelf} {first};
+
+#alias {levelUpdate} {
+	updateAttack;
+	updatePick;
+	updateHeals;
+};
+
+#alias {updateAttack} {
+	#if {$MSDP_LEVEL >= 4} {#var {attack} {dirty}};
+	#if {$MSDP_LEVEL >= 15} {#var {attack} {circle}};
+	#if {$MSDP_LEVEL >= 22} {#var {attack} {disembowel}};
+	#if {$MSDP_LEVEL >= 32} {#var {attack} {rogue_rush}};
+	#if {$MSDP_LEVEL >= 40} {#var {attack} {dagger chest}};
+};
+
+#alias {updatePick} {
+	#if {$MSDP_LEVEL >= 2} {
+		#var {canPick} {1}};
+	#else {#var {canPick} {0}};
+};
+
+#alias {updateHealOther} {
+	#if {$MSDP_LEVEL >= 10} {
+		#var {canHealOther} {1}};
+	#else {#var {canHealOther} {0}};
+};
+
+#alias {updateHeals} {
+	#if {$MSDP_LEVEL >= 32} {
+		#var {canHealOther} {1}};
+	#else {#var {canHealOther} {0}};
+	#var {canHealSelf} ${canHealOther};
+};
+
+#class vagrant close;

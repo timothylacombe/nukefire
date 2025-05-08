@@ -1,0 +1,73 @@
+#class curist kill;
+#class curist open;
+
+
+#nop Level 1:      Armor
+#nop               Cure Light
+#nop Level 3:      Detect Poison
+#nop Level 4:      Cure Blind
+#nop               Detect Alignment
+#nop Level 5:      Bless
+#nop Level 6:      Blindness
+#nop               Detect Invisibility
+#nop Level 7:      Catseye
+#nop Level 8:      Poison
+#nop               Protection from Evil
+#nop               Protection from Good
+#nop Level 9:      Aura of Protection
+#nop               Cure Critic
+#nop               Remove Poison
+#nop               Summon
+#nop Level 11:     Holy Fist
+#nop               Identify
+#nop Level 12:     Darkness
+#nop               Earthquake
+#nop               Remove Curse
+#nop               Word of Recall
+#nop Level 14:     Dispel Evil
+#nop               Dispel Good
+#nop               Heal
+#nop Level 15:     Call Lightning
+#nop               Sanctuary
+#nop Level 17:     Aura of Escape
+#nop               Control Weather
+#nop Level 18:     Invigorate
+#nop               Sense Life
+#nop Level 19:     Harm
+#nop Level 22:     Aura of Healing
+#nop Level 25:     Rejuvinate
+#nop Level 26:     Augury
+#nop Level 30:     Aura of Invigoration
+#nop Level 35:     Aura of Rejuvination
+#nop Level 40:     Restoration
+
+#var {canPick} {0};
+#var {pick} {#showme HAS NO PICK};
+#var {canHealOther} {1};
+#var {canHealSelf} {1};
+
+#alias {levelUpdate} {
+	updateAttack;
+	updatePick;
+	updateHealSelf;
+	updateHeals;
+};
+
+#alias {updateAttack} {
+	#var {attack} {#showme No curist single target attack.}};
+};
+
+#alias {updatePick} {
+	#nop only for completeness;
+};
+
+#alias {updateHeals} {
+	#if {$MSDP_LEVEL >= 1} {#var {healOther} {sling 'cure light'}};
+	#if {$MSDP_LEVEL >= 9} {#var {healOther} {sling 'cure critic'}};
+	#if {$MSDP_LEVEL >= 14} {#var {healOther} {sling 'heal'}};
+	#if {$MSDP_LEVEL >= 25} {#var {healOther} {sling 'rejuvinate'}};
+	#if {$MSDP_LEVEL >= 40} {#var {healOther} {sling 'restoration'}};
+	#var {healSelf} {$healOther}
+};
+
+#class curist close;

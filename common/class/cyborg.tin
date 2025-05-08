@@ -19,7 +19,7 @@
 #nop Level 40:     Nanomite Swarm (Damage/affect over Time);
 
 #var {pick} {break door};
-#var {healOther} {cyborepair}
+#var {healOther} {cyborepair};
 #var {healSelf} {selfrepair};
 
 #alias {levelUpdate} {

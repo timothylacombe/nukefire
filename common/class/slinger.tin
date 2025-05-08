@@ -1,0 +1,88 @@
+#class slinger kill;
+#class slinger open;
+
+#nop Level 1:      Magic Missile
+#nop Level 2:      Detect Invisibility
+#nop               Detect Magic
+#nop               Knock
+#nop Level 3:      Chill Touch
+#nop               Catseye
+#nop Level 4:      Armor
+#nop               Invisibility
+#nop               Remove Invisibility
+#nop Level 5:      Burning Hands
+#nop Level 6:      Strength
+#nop Level 7:      Shocking Grasp
+#nop Level 8:      Sleep
+#nop Level 9:      Blindness
+#nop               Lightning Bolt
+#nop Level 10:     Detect Poison
+#nop Level 11:     Color Spray
+#nop               Waterwalk
+#nop Level 13:     Energy Drain
+#nop Level 14:     Curse
+#nop               Poison
+#nop Level 15:     Blur
+#nop               Enchant Armor
+#nop               Enchant Weapon
+#nop               Fireball
+#nop               Identify
+#nop Level 16:     Charm Person
+#nop level 18:     Calliope
+#nop Level 22:     Disruption
+#nop               Fly
+#nop Level 23:     Firestorm
+#nop Level 25:     Shapeshift
+#nop Level 40:     Disintegrate
+#nop Level 45:     Phoenix Nova
+#nop Level 50:     Arcane Torrent (Skill)
+
+
+#var {pick} {sling 'knock'};
+#var {canHealOther} {0};
+#var {healOther} {#showme HAS NO HEAL OTHER};
+#var {canHealSelf} {0};
+#var {healSelf} {#showme HAS NO HEAL SELF};
+
+#alias {levelUpdate} {
+	updateAttack;
+	updatePick;
+	updateHealOther;
+	updateHealSelf;
+};
+
+#nop no aoe intended to be included
+#alias {updateAttack} {
+	#if {$MSDP_LEVEL >= 1} {#var {attack} {sling 'magic missile'}};
+	#if {$MSDP_LEVEL >= 2} {#var {attack} {sling 'chill touch'}};
+	#if {$MSDP_LEVEL >= 5} {#var {attack} {sling 'burning hands'}};
+	#if {$MSDP_LEVEL >= 7} {#var {attack} {sling 'shocking grasp'}};
+	#if {$MSDP_LEVEL >= 9} {#var {attack} {sling 'lightning bolt'}};
+	#if {$MSDP_LEVEL >= 11} {#var {attack} {sling 'color spray'}};
+	#if {$MSDP_LEVEL >= 13} {#var {attack} {sling 'energy drain'}};
+	#if {$MSDP_LEVEL >= 15} {#var {attack} {sling 'fireball'}};
+	#if {$MSDP_LEVEL >= 18} {#var {attack} {sling 'calliope'}};
+	#if {$MSDP_LEVEL >= 22} {#var {attack} {sling 'disruption'}};
+	#if {$MSDP_LEVEL >= 40} {#var {attack} {sling 'disintegrate'}};
+};
+
+#alias {updatePick} {
+	#if {$MSDP_LEVEL >= 2} {
+		#var {canPick} {1}};
+	#else {#var {canPick} {0}};
+};
+
+#alias {updateHealOther} {
+	#nop only for completeness;
+};
+
+#alias {updateHealSelf} {
+	#nop only for completeness;
+};
+
+
+
+
+
+
+#class slinger close;
