@@ -18,6 +18,17 @@
 #nop Level 35:     Neural Overload;
 #nop Level 40:     Nanomite Swarm (Damage/affect over Time);
 
+#var {pick} {break door};
+#var {healOther} {cyborepair}
+#var {healSelf} {selfrepair};
+
+#alias {levelUpdate} {
+	updateAttack;
+	updatePick;
+	updateHealOther;
+	updateHealSelf;
+};
+
 #alias {updateAttack} {
 	#if {$MSDP_LEVEL >= 1} {#var {attack} {kick}};
 	#if {$MSDP_LEVEL >= 3} {#var {attack} {bash}};
@@ -26,15 +37,23 @@
 	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload}};
 };
 
-updateAttack;
-
-#var {pick} {break door};
 #alias {updatePick} {
 	#if {$MSDP_LEVEL >= 15} {
-		#var {picker} {1};}
-	{#var {picker} {0}};
+		#var {canPick} {1}};
+	#else {#var {canPick} {0}};
 };
-updatePick;
+
+#alias {updateHealOther} {
+	#if {$MSDP_LEVEL >= 10} {
+		#var {canHealOther} {1}};
+	#else {#var {canHealOther} {0}};
+};
+
+#alias {updateHealSelf} {
+	#if {$MSDP_LEVEL >= 2} {
+		#var {canHealSelf} {1}};
+	#else {#var {canHealSelf} {0}};
+};
 
 #action {^The //DAMCON\\ status light blinks off.} {
 	#showme DAMCON DOWN!!;
