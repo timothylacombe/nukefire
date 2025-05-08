@@ -16,8 +16,8 @@
 #alias connect {
 	#showme Attempting to create session for character %1.;
 	#switch {"%2"} {
-		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char};#line oneshot #tick {char_loader} {#read chars/char_loader.tin;} {1.0}}
-		#default {#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};#line oneshot #tick {char_loader} {#read chars/char_loader.tin;} {1.0}}
+		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char};#line oneshot #tick {char_loader} {#read chars/char_loader.tin;#showme CHARACTER LOADED} {2.0}}
+		#default {#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};#line oneshot #tick {char_loader} {#read chars/char_loader.tin;#showme CHARACTER LOADED} {2.0}}
 	};
 	
 	#if {!@is_session{nuke:${char_name}}} {

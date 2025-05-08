@@ -25,6 +25,7 @@
 	#if {$MSDP_LEVEL >= 13} {#var {attack} {pound}};
 	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload}};
 };
+
 updateAttack;
 
 #var {pick} {break door};
