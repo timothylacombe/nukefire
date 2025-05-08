@@ -36,6 +36,7 @@ updateAttack;
 updatePick;
 
 #action {The //DAMCON\\ status light blinks off.} {
+	#showme DAMCON DOWN!!;
 	damcon;
 };
 
