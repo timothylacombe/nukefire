@@ -3,7 +3,7 @@
 #nop name of leader or only character;
 #var {charMain} {headhunter};
 
-#nop number of party members, 1 for solo;
+#nop number of party members, 1 for solo, no idea why but right now only works with 4, connection issues otherwise;
 #var numParty 4;
 
 #nop names of other characters, in order for loading if you care;

@@ -1,15 +1,20 @@
 #nop Session initialization and character login
 
+#nop Read into #gts to be inhereted into all sessions;
+#read common/functions.tin;
+#read config.tin;
+#read common/msdp.tin;
+
 #class initializer kill
 #class initializer open
 
 #alias connect {
 	#showme Attempting to create session for character %1.;
 	#switch {"%2"} {
-		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char}};
-		#default {
-		#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};
+		#case {"tp"} {
+			#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char};#read chars/char_loader.tin;
 		}
+		#default {#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};#read chars/char_loader.tin;}
 	};
 	
 	#if {!@is_session{nuke:${char_name}}} {
