@@ -19,11 +19,11 @@
 #nop Level 40:     Nanomite Swarm (Damage/affect over Time);
 
 #alias {updateAttack} {
-	#if {$MSDP_LEVEL >= 1} {#var {attack} {kick}}; {};
-	#if {$MSDP_LEVEL >= 3} {#var {attack} {bash}}; {};
-	#if {$MSDP_LEVEL >= 4} {#var {attack} {piston punch}}; {};
-	#if {$MSDP_LEVEL >= 13} {#var {attack} {pound}; {};
-	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload}; {};
+	#if {$MSDP_LEVEL >= 1} {#var {attack} {kick}};
+	#if {$MSDP_LEVEL >= 3} {#var {attack} {bash}};
+	#if {$MSDP_LEVEL >= 4} {#var {attack} {piston punch}};
+	#if {$MSDP_LEVEL >= 13} {#var {attack} {pound}};
+	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload}};
 };
 updateAttack;
 
