@@ -47,9 +47,6 @@
 #var {canHealSelf} {1};
 
 #alias {levelUpdate} {
-	updateAttack;
-	updatePick;
-	updateHealSelf;
 	updateHeals;
 };
 
