@@ -5,6 +5,11 @@
 #read config.tin;
 #read common/msdp.tin;
 
+var ses1 {#nuke:${charMain}};
+var ses2 {#nuke:${charTwo}};
+var ses3 {#nuke:${charThree}};
+var ses4 {#nuke:${charFour}};
+
 #class initializer kill
 #class initializer open
 

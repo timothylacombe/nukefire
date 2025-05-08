@@ -3,5 +3,8 @@
 #class leader kill
 #class leader open
 
+#alias groupup {
+	#all follow ${charMain};group new;
+}
 
 #class leader close
