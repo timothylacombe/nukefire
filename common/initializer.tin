@@ -16,9 +16,7 @@
 #alias connect {
 	#showme Attempting to create session for character %1.;
 	#switch {"%2"} {
-		#case {"tp"} {
-			#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char};#read chars/char_loader.tin;
-		}
+		#case {"tp"} {#session nuke:%1 {tdome.nukefire.org} {4001} {chars/%1.char};#read chars/char_loader.tin;}
 		#default {#session nuke:%1 {tdome.nukefire.org} {4000} {chars/%1.char};#read chars/char_loader.tin;}
 	};
 	
@@ -37,7 +35,7 @@
 } {9}
 
 #action {^Password:} {
-	#if { &{char_password} } {
+	#if {&{char_password} } {
 		#echo {<cfa>Password loaded.};$char_password;#unvar char_password;#showme <fcc>Forgetting password.
 	} {
 		#echo {<cfa>Password not loaded.}
@@ -47,10 +45,14 @@
 #action {^*** PRESS RETURN:} {#cr}
 
 #action {^%sMake your choice:} {
-	#nop login logic needed;
+	#nop login logic needed, right now disallows logout with leaving dc;
 	1
 }
 
+
+#nop ----
+#nop Currently UNUSED actions, may want to use later
+#nop ----
 
 
 #nop action {^Reconnecting.} {
@@ -63,7 +65,7 @@
 	post_connect_load reconnect
 }
 
-#nop #action {^Kick Back.   Relax.   Dream.   Build.$} {post_connect_load login}
+#nop action {^Kick Back.   Relax.   Dream.   Build.$} {post_connect_load login}
 
 #nop action {^Kick Back.   Relax.   Dream.   Build.$} {
 	event_raise enter_world

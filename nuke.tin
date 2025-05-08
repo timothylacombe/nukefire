@@ -12,17 +12,17 @@ connect ${charMain};
 
 
 #if {${numParty} > 1} {
-	connect ${charTwo};#read chars/char_loader.tin;
+	connect ${charTwo};
 	}{};
 	
 #if {${numParty} > 2} {
-	connect ${charThree};#read chars/char_loader.tin;
+	connect ${charThree};
 	}{};
 	
 #if {${numParty} > 3} {
-	connect ${charFour};#read chars/char_loader.tin;
+	connect ${charFour};
 	}{};
+ses1;
 
-#nuke:${charMain};
-#showme TEST
-#class startup close
+
+#class startup close;
