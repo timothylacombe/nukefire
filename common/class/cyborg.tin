@@ -1,36 +1,37 @@
 #class cyborg kill;
 #class cyborg open;
 
-#nop Level 1:      DAMCON (Damage Control)
-#nop Level 1:      Kick
-#nop Level 1:      Nanomite Repair (innate)
-#nop Level 1:      Overboost
-#nop Level 2:      Selfrepair
-#nop Level 3:      Bash
-#nop Level 4:      Piston Punch
-#nop Level 5:      Entrench
-#nop Level 8:      Dual-Wield
-#nop Level 10:     Cyborepair
-#nop Level 10:     TURBO
-#nop Level 13:     Pound
-#nop Level 15:     Break Door
-#nop Level 35:     Neural Overload
-#nop Level 40:     Nanomite Swarm (Damage/affect over Time)
+
+#nop Level 1:      DAMCON (Damage Control);
+#nop Level 1:      Kick;
+#nop Level 1:      Nanomite Repair (innate);
+#nop Level 1:      Overboost;
+#nop Level 2:      Selfrepair;
+#nop Level 3:      Bash;
+#nop Level 4:      Piston Punch;
+#nop Level 5:      Entrench;
+#nop Level 8:      Dual-Wield;
+#nop Level 10:     Cyborepair;
+#nop Level 10:     TURBO;
+#nop Level 13:     Pound;
+#nop Level 15:     Break Door;
+#nop Level 35:     Neural Overload;
+#nop Level 40:     Nanomite Swarm (Damage/affect over Time);
 
 #alias {updateAttack} {
-	#if {$MSDP_LEVEL >= 1} {#var {attack} {kick}} {}
-	#if {$MSDP_LEVEL >= 3} {#var {attack} {bash}} {}
-	#if {$MSDP_LEVEL >= 4} {#var {attack} {piston punch}} {}
-	#if {$MSDP_LEVEL >= 13} {#var {attack} {pound} {}
-	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload} {}
-}
+	#if {$MSDP_LEVEL >= 1} {#var {attack} {kick}} {};
+	#if {$MSDP_LEVEL >= 3} {#var {attack} {bash}} {};
+	#if {$MSDP_LEVEL >= 4} {#var {attack} {piston punch}} {};
+	#if {$MSDP_LEVEL >= 13} {#var {attack} {pound} {};
+	#if {$MSDP_LEVEL >= 35} {#var {attack} {neural overload} {};
+};
 updateAttack;
 
 #var {pick} {break door}
 #alias {updatePick} {
 	#if {$MSDP_LEVEL >= 15} {
-		#var {picker} {1}}
-	{#var {picker} {0}}
+		#var {picker} {1};}
+	{#var {picker} {0}};
 }
 updatePick;
 
