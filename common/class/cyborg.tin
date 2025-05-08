@@ -27,12 +27,12 @@
 };
 updateAttack;
 
-#var {pick} {break door}
+#var {pick} {break door};
 #alias {updatePick} {
 	#if {$MSDP_LEVEL >= 15} {
 		#var {picker} {1};}
 	{#var {picker} {0}};
-}
+};
 updatePick;
 
 #action {The //DAMCON\\ status light blinks off.} {
