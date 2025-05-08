@@ -11,17 +11,17 @@ connect ${charMain};
 #read chars/leader.tin;
 
 
-#if {${numParty} > 1} {
+#if {${numParty} >= 2} {
 	connect ${charTwo};
-	}{};
+	};
 	
-#if {${numParty} > 2} {
+#if {${numParty} >= 3} {
 	connect ${charThree};
-	}{};
+	};
 	
-#if {${numParty} > 3} {
+#if {${numParty} >=4 } {
 	connect ${charFour};
-	}{};
+	};
 $ses1;
 
 

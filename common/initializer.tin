@@ -44,8 +44,8 @@
 
 #action {^*** PRESS RETURN:} {#cr}
 
+#nop login logic needed, right now disallows logout with leaving dc;
 #action {^%sMake your choice:} {
-	#nop login logic needed, right now disallows logout with leaving dc;
 	1
 }
 
