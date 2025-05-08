@@ -54,7 +54,7 @@
 };
 
 #alias {updateAttack} {
-	#var {attack} {#showme No curist single target attack.}};
+	#var {attack} {#showme No curist single target attack.};
 };
 
 #alias {updatePick} {
@@ -67,7 +67,7 @@
 	#if {$MSDP_LEVEL >= 14} {#var {healOther} {sling 'heal'}};
 	#if {$MSDP_LEVEL >= 25} {#var {healOther} {sling 'rejuvinate'}};
 	#if {$MSDP_LEVEL >= 40} {#var {healOther} {sling 'restoration'}};
-	#var {healSelf} {$healOther}
+	#var {healSelf} {$healOther};
 };
 
 #class curist close;
