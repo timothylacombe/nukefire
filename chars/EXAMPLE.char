@@ -4,4 +4,6 @@
 #var char_name {<charname>};
 #nop password will be removed from variables after login
 #var char_password {<charpassword>};
+
+#nop class could be changed to pull from MSDP eventually, but isn't now
 #var class {<class>};
