@@ -28,8 +28,8 @@
 };
 
 #alias k {
-	#{nuke:gypsy} {backstab %*};
-	#all kill %*;
+	#{nuke:gypsy} {backstab %0};
+	#all kill %0;
 };
 
 #class leader close
