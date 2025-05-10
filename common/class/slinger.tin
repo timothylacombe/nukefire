@@ -53,17 +53,17 @@
 
 #nop no aoe intended to be included
 #alias {updateAttack} {
-	#if {$MSDP_LEVEL >= 1} {#var {attack} {sling 'magic missile'}};
-	#if {$MSDP_LEVEL >= 2} {#var {attack} {sling 'chill touch'}};
-	#if {$MSDP_LEVEL >= 5} {#var {attack} {sling 'burning hands'}};
-	#if {$MSDP_LEVEL >= 7} {#var {attack} {sling 'shocking grasp'}};
-	#if {$MSDP_LEVEL >= 9} {#var {attack} {sling 'lightning bolt'}};
-	#if {$MSDP_LEVEL >= 11} {#var {attack} {sling 'color spray'}};
-	#if {$MSDP_LEVEL >= 13} {#var {attack} {sling 'energy drain'}};
-	#if {$MSDP_LEVEL >= 15} {#var {attack} {sling 'fireball'}};
-	#if {$MSDP_LEVEL >= 18} {#var {attack} {sling 'calliope'}};
-	#if {$MSDP_LEVEL >= 22} {#var {attack} {sling 'disruption'}};
-	#if {$MSDP_LEVEL >= 40} {#var {attack} {sling 'disintegrate'}};
+	#if {$MSDP_LEVEL >= 1} {#var {attack} {sling 'magic missile' %0}};
+	#if {$MSDP_LEVEL >= 2} {#var {attack} {sling 'chill touch' %0}};
+	#if {$MSDP_LEVEL >= 5} {#var {attack} {sling 'burning hands' %0}};
+	#if {$MSDP_LEVEL >= 7} {#var {attack} {sling 'shocking grasp' %0}};
+	#if {$MSDP_LEVEL >= 9} {#var {attack} {sling 'lightning bolt' %0}};
+	#if {$MSDP_LEVEL >= 11} {#var {attack} {sling 'color spray' %0}};
+	#if {$MSDP_LEVEL >= 13} {#var {attack} {sling 'energy drain' %0}};
+	#if {$MSDP_LEVEL >= 15} {#var {attack} {sling 'fireball' %0}};
+	#if {$MSDP_LEVEL >= 18} {#var {attack} {sling 'calliope' %0}};
+	#if {$MSDP_LEVEL >= 22} {#var {attack} {sling 'disruption' %0}};
+	#if {$MSDP_LEVEL >= 40} {#var {attack} {sling 'disintegrate' %0}};
 };
 
 #alias {updatePick} {

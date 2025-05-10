@@ -32,11 +32,11 @@
 };
 
 #alias {updateAttack} {
-	#if {$MSDP_LEVEL >= 4} {#var {attack} {dirty}};
-	#if {$MSDP_LEVEL >= 15} {#var {attack} {circle}};
-	#if {$MSDP_LEVEL >= 22} {#var {attack} {disembowel}};
-	#if {$MSDP_LEVEL >= 32} {#var {attack} {rogue_rush}};
-	#if {$MSDP_LEVEL >= 40} {#var {attack} {dagger chest}};
+	#if {$MSDP_LEVEL >= 4} {#var {attack} {dirty %0}};
+	#if {$MSDP_LEVEL >= 15} {#var {attack} {circle %0}};
+	#if {$MSDP_LEVEL >= 22} {#var {attack} {disembowel %0}};
+	#if {$MSDP_LEVEL >= 32} {#var {attack} {rogue_rush %0}};
+	#if {$MSDP_LEVEL >= 40} {#var {attack} {dagger chest %0}};
 };
 
 #alias {updatePick} {
