@@ -11,4 +11,21 @@
 	#all recall;
 }
 
+#alias sanc {
+	#{nuke:heretic} {sling 'sanctuary' headhunter;sling 'sanctuary' gypsy;sling 'sanctuary' heretic;sling 'sanctuary' voidstriker}
+};
+
+#alias armor {
+	#{nuke:heretic} {sling 'aura of protection'}
+};
+
+#alias bless {
+	#{nuke:heretic} {sling 'bless' headhunter;sling 'bless' gypsy;sling 'bless' heretic;sling 'bless' voidstriker}
+};
+
+#alias k {
+	#{nuke:gypsy} {bs $*}
+	#all kill $*
+};
+
 #class leader close
