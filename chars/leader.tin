@@ -23,8 +23,12 @@
 	#{nuke:heretic} {sling 'bless' headhunter;sling 'bless' gypsy;sling 'bless' heretic;sling 'bless' voidstriker}
 };
 
+#alias healme {
+	#{nuke:heretic} {$healOther headhunter}
+};
+
 #alias k {
-	#{nuke:gypsy} {bs $*}
+	#{nuke:gypsy} {bs $*};
 	#all kill $*
 };
 
