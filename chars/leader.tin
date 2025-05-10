@@ -28,7 +28,7 @@
 };
 
 #alias k {
-	kill $0;
+	kill %0;
 	#{nuke:gypsy} {$attack %0};
 	#{nuke:voidstriker} {$attack %0};
 };
