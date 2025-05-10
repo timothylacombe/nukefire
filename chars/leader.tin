@@ -29,7 +29,7 @@
 
 #alias k {
 	#{nuke:gypsy} {backstab %0};
-	#kill $0;
+	kill $0;
 };
 
 #class leader close
