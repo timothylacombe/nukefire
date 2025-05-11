@@ -24,13 +24,13 @@
 };
 
 #alias healme {
-	#{nuke:heretic} {$healOther headhunter}
+	#{nuke:heretic} {@nuke:heretic{$healOther} headhunter}
 };
 
 #alias k {
 	kill %0;
-	#{nuke:gypsy} {#showme $attack %0};
-	#{nuke:voidstriker} {#showme $attack %0};
+	#{nuke:gypsy} {@nuke:gypsy{$attack} %0};
+	#{nuke:voidstriker} {@nuke:voidstriker{$attack} %0};
 };
 
 #class leader close
