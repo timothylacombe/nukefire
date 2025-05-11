@@ -29,8 +29,8 @@
 
 #alias k {
 	kill %0;
-	#{nuke:gypsy} {{@nuke:gypsy{$attack}} %0};
-	#{nuke:voidstriker} {#showme {@nuke:voidstriker{attack} %0}};
+	#{nuke:gypsy} {$$attack %0};
+	#{nuke:voidstriker} {$$attack %0}};
 };
 
 #class leader close
